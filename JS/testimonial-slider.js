@@ -1,0 +1,19 @@
+$('.testimonial-slider').owlCarousel({
+     loop:true,
+     items:1,
+     dotsEach:true,
+     center:true,
+     slideby:1,
+     autoplay:true,
+     autoplayTimeout:5000,
+     autoplayHoverPause:true,
+  })
+  $('.blog-area').owlCarousel({
+   loop:true,
+   items:3,
+   margin:30,
+   slideby:3,
+   autoplay:true,
+   autoplayTimeout:2000,
+   autoplayHoverPause:true,
+})

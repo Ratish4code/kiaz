@@ -1,0 +1,1536 @@
+/* ============================================== Default css ========================================= */
+
+:root{
+     --theme-dark-color:#031888;
+     --theme-rgb-dark-color:rgb(3, 24, 136);
+     --theme-light-color:#1D3094;
+     --theme-lighter-color:#6096FD;
+     --theme-white-color:#fff;
+     --theme-black-color:#000;
+     --theme-gray-color:#646464;
+     --theme-text-color:#fb788e;
+
+     --duration-a-5:.5s;
+}
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+     font-family: 'Poppins', sans-serif;
+     position: relative;
+}
+a{
+     text-decoration: none;
+}
+ul,ol{
+     list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+     font-family: 'poppins', sans-serif;
+}
+.container{
+     width: 1320px;
+     margin: 0 auto;
+}
+.flex{
+     display: flex;
+     flex-wrap: wrap;
+}
+.justify-content-between{
+     justify-content: space-between;
+}
+.align-item-center{
+     align-items: center;
+}
+
+/* ============================================== Header Section css ========================================= */
+
+/* Header Topbar */
+
+/* header{
+     position: sticky;
+} */
+.header-setion{
+     background-color: var(--theme-dark-color);
+     padding: 10px 0;
+     color: var(--theme-white-color);
+}
+.header-widget .time-location ul li{
+     font-size: 14px;
+     margin-right: 14px;
+     padding-right: 16px;
+     border-right: 2px solid #fff;
+}
+.header-widget .time-location ul li:last-child{
+     border: none;
+}
+.header-widget .time-location ul li i{
+     margin-right: 5px;
+}
+.header-widget .time-location ul li a{
+     color: var(--theme-white-color);
+}
+.header-widget .social-icon ul li{
+     margin-left: 10px;
+}
+.header-widget .social-icon ul li i{
+     height: 30px;
+     width: 30px;
+     line-height: 30px;
+     text-align: center;
+     border-radius: 5px;
+     font-size: 14px;
+     color: var(--theme-white-color);
+     background-color: var(--theme-light-color);
+     position: relative;
+     z-index: 0;
+     transition: var(--duration-a-5);
+}
+.header-widget .social-icon ul li i::after{
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 0;
+     width: 0;
+     background-color: var(--theme-white-color);
+     border-radius: 5px;
+     transition: var(--duration-a-5);
+     z-index: -1;
+}
+.header-widget .social-icon ul li i:hover::after {
+     width: 100%;
+     height: 100%;
+}
+.header-widget .social-icon ul li i:hover{
+     color: var(--theme-lighter-color);
+}
+
+
+/* Logo-Menu bar */
+
+.menu-section{
+     position: relative;
+     z-index: 1;
+}
+.logo-menu-bar{
+     padding: 15px 0;
+}
+.logo-menu-bar .logo{
+     width: 140px;
+}
+.logo-menu-bar .logo img{
+     width: 100%;
+}
+
+.logo-menu-bar .menu li{
+     padding: 15px 0;
+}
+.logo-menu-bar .menu li a{
+     color: var(--theme-black-color);
+     text-transform: capitalize;
+     margin: 0 15px;
+     font-size: 16px;
+     font-weight: 500;
+     transition-duration: var(--duration-a-5);
+}
+.logo-menu-bar .menu li a i{
+     margin: 0 5px;
+     font-size: 14px;
+     line-height: 1;
+     font-weight: 600;
+     transition-duration: var(--duration-a-5);
+}
+.logo-menu-bar .menu li:hover i{
+     transform: rotate(90deg);
+}
+.logo-menu-bar .menu li:hover a{
+     color: var(--theme-dark-color);
+}
+
+.menu li{
+     position: relative;
+}
+.menu li:hover .sub-menu{
+     /* display: block; */
+     top: 100%;
+     opacity: 1;
+     visibility: visible;
+}
+.sub-menu{
+     background-color: var(--theme-white-color);
+     position: absolute;
+     top: calc(100% + 30px);
+     left: 0;
+     width: 250px;
+     box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
+     border-radius: 5px;
+     opacity: 0;
+     visibility: hidden;
+     transform-origin: top center;
+     /* display: none; */
+     transition-duration: var(--duration-a-5);
+}
+.sub-menu li{
+     padding: 0 !important;
+     margin: 0 !important;
+}
+.sub-menu li a{
+     border-bottom: 1px dashed var(--theme-gray-color);
+     padding: 10px 20px;
+     display: block;
+     margin: 0 !important;
+     position: relative;
+}
+.sub-menu li:last-child a{
+     border-bottom: none;
+}
+.sub-menu li a::before,
+.sub-menu li a::after{
+     content: "";
+     position: absolute;
+     bottom: 0;
+     width: 3px;
+     background-color: var(--theme-lighter-color);
+     transition-duration: var(--duration-a-5);
+}
+.sub-menu li a::before{
+     left: 0;
+     height: 95%;
+}
+.sub-menu li a::after{
+     right: 0;
+     height: 0;
+}
+.sub-menu li a:hover::before{
+     height: 0;
+}
+.sub-menu li a:hover::after{
+     height: 95%;
+}
+
+.sub-menu li:hover{
+     border-width: 100%;
+}
+
+.logo-menu-bar .menu-bar .nav-btn{
+     margin-left: 20px;
+}
+.logo-menu-bar .menu-bar .nav-btn a{
+     font-size: 16px;
+     text-transform: capitalize;
+     color: var(--theme-white-color);
+     padding: 10px 35px;
+     border-radius: 5px;
+     background-color: var(--theme-lighter-color);
+     position: relative;
+     transition-duration: var(--duration-a-5);
+}
+.logo-menu-bar .menu-bar .nav-btn a::before{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     width: 100%;
+     height: 0;
+     background-color: var(--theme-dark-color);
+     transition-duration: var(--duration-a-5);
+     border-radius: 5px;
+}
+.logo-menu-bar .menu-bar .nav-btn a:hover::before{
+     height: 100%;
+}
+/* .logo-menu-bar .menu-bar .nav-btn a:hover{
+     color: var(--theme-lighter-color);
+} */
+.nav-btn span{
+     position: relative;
+     z-index: 1;
+}
+
+/* ============================================== Main Slider Section css ========================================= */
+
+
+.slider-main{
+     color: var(--theme-white-color);
+     background-image: linear-gradient(90deg,rgba(3,24,136,.7),transparent),url(../IMAGE/asset\ 33.png);
+     background-size: cover;
+     width: 100%;
+}
+.slider-text{
+     width: 60%;
+     padding: 150px 0;
+}
+.slider-text h1{
+     font-size: 70px;
+}
+.slider-text p{
+     margin: 50px 0;
+     line-height: 30px;
+}
+.slider-btn button,
+.service-btn button{
+     font-size: 16px;
+     font-weight: 500;
+     margin-right: 25px;
+     padding: 15px 35px;
+     color: var(--theme-white-color);
+     background: transparent;
+     outline: none;
+     cursor: pointer;
+     border: 1px solid var(--theme-white-color);
+     text-transform: capitalize;
+     border-radius: 5px;
+     position: relative;
+     transition-duration: var(--duration-a-5);
+}
+.slider-btn button span,
+.service-btn button span{
+     position: relative;
+     z-index: 2;
+}
+.slider-btn button::before{
+     content: '';
+     position: absolute;
+     background-color: var(--theme-lighter-color);
+     height: 100%;
+     width: 0;
+     top: 0;
+     left: 0;
+     border-radius: 5px;
+     z-index: 0;
+     transition-duration: var(--duration-a-5);
+}
+.slider-btn button:hover::before{
+     width: 100%;
+}
+.slider-btn button:hover{
+     border-color: transparent;
+}
+
+
+/* ============================================== Service Section css ========================================= */
+
+.service{
+     padding: 100px 0;
+     position: relative;
+}
+.service-heading{
+     text-align: center;
+     width: 50%;
+     margin: 0 auto 55px auto;
+}
+.service-heading h1{
+     line-height: 2.5;
+     font-size: 40px;
+     font-weight: 600;
+     text-transform: capitalize;
+}
+.service-heading h1 span{
+     color: var(--theme-lighter-color);
+}
+.service-heading p{
+     line-height: 2;
+     color: var(--theme-gray-color);
+     font-size: 16px;
+}
+.service-contant{
+     gap: 30px;
+     flex: 0 0 auto;
+}
+.service-tab{
+     text-align: center;
+     width: 31.66%;
+     padding: 35px 30px;
+     border: 1px solid var(--theme-lighter-color);
+     border-radius: 10px;
+     position: relative;
+}
+.service-tab i{
+     display: block;
+     font-size: 50px;
+     color: var(--theme-lighter-color);
+     margin-bottom: 20px;
+     transition-duration: var(--duration-a-5);
+}
+.service-tab h3{
+     text-transform: capitalize;
+     font-size: 20px;
+     font-weight: 600;
+     margin-bottom: 10px;
+     transition-duration: var(--duration-a-5);
+}
+.service-tab p{
+     font-size: 16px;
+     color: var(--theme-gray-color);
+     line-height: 1.5;
+     margin-bottom: 20px;
+     transition-duration: var(--duration-a-5);
+}
+.service-btn button{
+     padding: 10px 40px;
+     background-color: #fff;
+     color: var(--theme-lighter-color);
+     border-color: var(--theme-lighter-color);
+}
+.service-tab::before{
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     height: 0;
+     width: 100%;
+     background-color: var(--theme-lighter-color);
+     border-radius: 10px;
+     z-index: -1;
+     transition-duration: var(--duration-a-5);
+}
+.service-tab:hover::before{
+     height: 100%;
+}
+.service-tab::after{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     background-image: url(../IMAGE/asset\ 34.png);
+     width: 76px;
+     height: 48px;
+     z-index: 0;
+     opacity: 0;
+     transition-duration: var(--duration-a-5);
+}
+.service-tab:hover::after{
+     opacity: 1;
+}
+.service-tab:hover i,
+.service-tab:hover h3,
+.service-tab:hover p{
+     color: var(--theme-white-color);
+}
+
+.service-animation{
+     width: 100%;
+     height: 100%;
+}
+.service-animation img{
+     position: absolute;
+     /* animation: traslate duration timing-function delay iteration-count direction fill-mode; */
+     animation: traslate infinite 2s;
+}
+.service-animation img:nth-child(odd){
+     animation-delay: var(--duration-a-5);
+}
+.service-animation img:nth-child(even){
+     animation-delay: .3s;
+}
+.service-animation img:nth-child(1){
+     top: 10%;
+     left: 10%;
+}
+.service-animation img:nth-child(2){
+     top: 20%;
+     left: 30%;
+}
+.service-animation img:nth-child(3){
+     top: 5%;
+     left: 70%;
+}
+.service-animation img:nth-child(4){
+     top: 15%;
+     right: 10%;
+}
+.service-animation img:nth-child(5){
+     top: 38%;
+     left: 3%;
+}
+.service-animation img:nth-child(6){
+     top: 78%;
+     left: 1%;
+}
+.service-animation img:nth-child(7){
+     bottom: 5%;
+     left: 20%;
+}
+.service-animation img:nth-child(8){
+     top: 48%;
+     right: 1%;
+}
+.service-animation img:nth-child(9){
+     top: 68%;
+     right: 3%;
+}
+.service-animation img:nth-child(10){
+     top: 93%;
+     right: 20%;
+}
+@keyframes traslate {
+     50%{
+          transform: translateX(10px);
+     }
+     100%{
+          transform: translateX(0);
+     }
+}
+
+
+/* ============================================== Choose-us Section css ========================================= */
+
+
+.choose-us{
+     /* height: 100vh; */
+     background-image: linear-gradient(90deg,rgba(3,24,136,.8),rgba(3,24,136,.8)),url(../IMAGE/asset\ 35.png);
+     background-size: cover;
+     background-position: center center;
+     position: relative;
+}
+.choose-us .img1{
+     position: absolute;
+     top: -7%;
+     left: 0;
+     width: 50%;
+     height: 107%;
+     background-image: url(../IMAGE/asset\ 36.png);
+     background-size: cover;
+     background-position: center center;
+}
+.choose-us-contant{
+     color: var(--theme-white-color);
+     padding: 100px 30px;
+     width: 45%;
+     margin-left: auto;
+}
+.choose-us-contant h1{
+     text-transform: capitalize;
+     font-size: 40px;
+     margin-bottom: 30px;
+}
+.choose-us-contant p{
+     padding-right: 90px;
+     line-height: 1.5;
+     margin-bottom: 30px;
+}
+.work-fream{
+     background-color: var(--theme-white-color);
+     color: #000;
+     padding: 10px 40px;
+     border-radius: 5px 5px 0 0;
+     margin-bottom: 15px;
+     width: 90%;
+}
+.work-fream h4{
+     font-weight: 500;
+     position: relative;
+}
+.work-fream h4 i{
+     color: var(--theme-gray-color);
+     position: absolute;
+     top: 50%;
+     right: 0;
+     transform: translateY(-50%);
+}
+.requset-form div{
+     margin: 30px 0;
+}
+.requset-form input{
+     width: 50%;
+     font-size: 16px;
+     padding: 15px 20px;
+     margin-right: 30px;
+     border: none;
+     outline: none;
+     background-color: rgba(255, 255, 255, .4);
+     border-radius: 5px;
+}
+.requset-form input::placeholder{
+     color: var(--theme-white-color);
+}
+.requset-form button{
+     font-size: 16px;
+     padding: 15px 30px;
+     text-transform: capitalize;
+     background-color: var(--theme-lighter-color);
+     color: var(--theme-white-color);
+     border: 1px solid var(--theme-lighter-color);
+     border-radius: 5px;
+     transition-duration: var(--duration-a-5);
+}
+.requset-form button:hover{
+     background-color: var(--theme-dark-color);
+}
+
+
+/* ============================================== Process Section css ========================================= */
+
+
+.process{
+     padding: 100px;
+     padding-top: 150px;
+}
+.process-tab{
+     text-align: center;
+     width: 33.33%;
+     position: relative;
+     /* border: 2px solid #6096FD; */
+}
+.process-tab i{
+     font-size: 50px;
+     color: var(--theme-lighter-color);
+     margin-bottom: 100px;
+     position: relative;
+     transition-duration: var(--duration-a-5);
+}
+.process-tab i::after{
+     content: "";
+     position: absolute;
+     top: -50px;
+     left: -54px;
+     height: 150px;
+     width: 150px;
+     border: 1px dashed #adadad;
+     background-color: var(--theme-white-color);
+     box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
+     transform: rotate(45deg);
+     border-radius: 5px;
+     transition-duration: var(--duration-a-5);
+     z-index: -1;
+}
+.process-tab:hover i::after{
+     background-color: var(--theme-lighter-color);
+}
+.process-tab:hover i{
+     color: var(--theme-white-color);
+}
+.process-tab h3{
+     font-size: 22px;
+     text-transform: capitalize;
+     margin-bottom: 15px;
+}
+.process-tab p{
+     padding: 0 30px;
+     text-transform: capitalize;
+     color: var(--theme-gray-color);
+     line-height: 1.8;
+}
+.process-tab img{
+     position: absolute;
+     top: 0;
+     right: -20px;
+}
+
+
+/* ============================================== Pricing Plan Section css ========================================= */
+
+
+.price{
+     padding-bottom: 70px;
+}
+.price-text,
+.team-text,
+.blog-text,
+.process-heading{
+     text-align: center;
+     margin-bottom: 50px;
+}
+.price-text p,
+.team-text p,
+.blog-text p,
+.process-heading p{
+     max-width: 600px;
+     margin: auto;
+     color: var(--theme-gray-color);
+}
+.price-text h1,
+.team-text h1,
+.blog-text h1,
+.process-heading h1{
+     max-width: 600px;
+     margin: auto;
+     text-transform: capitalize;
+     font-size: 40px;
+     font-weight: 600;
+}
+.price-text h1 span,
+.team-text h1 span,
+.blog-text h1 span,
+.process-heading h1 span{
+     color: var(--theme-lighter-color);
+}
+.plan{
+     width: 31.33%;
+     margin: 0 12px;
+     border: 1px solid var(--theme-lighter-color);
+     border-radius: 5px;
+}
+.plan-name{
+     padding: 20px;
+     border-radius: 5px 5px 0 0;
+     background-color: var(--theme-lighter-color);
+     color: var(--theme-white-color);
+     text-transform: capitalize;
+     text-align: center;
+     position: relative;
+     z-index: 0;
+}
+.plan-name::before{
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     border-radius: 4px;
+     background-image: url(../IMAGE/asset\ 37.png);
+     background-position: center center;
+     background-size: cover;
+     z-index: -1;
+     opacity: 0;
+     transition: 1s ease-in-out;
+}
+.plan:hover .plan-name::before{
+     opacity: .8;
+}
+.plan-name h4{
+     font-size: 18px;
+     font-weight: 500;
+     margin-bottom: 10px;
+}
+.plan-name h2{
+     font-size: 30px;
+     font-weight: 600;
+}
+.plan-name h2 span{
+     font-size: 36px;
+}
+.plan-feture{
+     padding: 30px 30px 30px 90px;
+}
+.plan-feture ul li{
+     padding: 10px 0;
+     font-weight: 500;
+}
+.plan-feture ul li i{
+     margin-right: 5px;
+}
+.plan-btn{
+     text-align: center;
+     margin-bottom: 30px;
+}
+.plan-btn button span{
+     position: relative;
+     z-index: 2;
+}
+.plan-btn button{
+     text-transform: capitalize;
+     padding: 10px 30px;
+     font-size: 18px;
+     font-weight: 500;
+     color: var(--theme-dark-color);
+     border: 1px solid var(--theme-dark-color);
+     border-radius: 5px;
+     outline: none;
+     background-color: var(--theme-white-color);
+     transition-duration: var(--duration-a-5);
+     position: relative;
+}
+.plan-btn button::before{
+     content: "";
+     position: absolute;
+     width: 0;
+     height: 100%;
+     top: 0;
+     left: 0;
+     border-radius: 4px;
+     background-color: var(--theme-dark-color);
+     z-index: 0;
+     transition-duration: var(--duration-a-5);
+}
+.plan-btn button:hover::before{
+     width: 100%;
+}
+.plan-btn button:hover{
+     color: var(--theme-white-color);
+}
+
+
+/* ============================================== Discount Section css ========================================= */
+
+
+.discount{
+     padding: 80px 0;
+     position: relative;
+}
+.discount::before{
+     content: "";
+     position: absolute;
+     background-color: var(--theme-dark-color);
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: -1;
+}
+.discount-text{
+     width: 40%;
+}
+.discount-text h2{
+     margin-right: auto;
+     margin-bottom: 15px;
+     max-width: 400px;
+     font-size: 40px;
+     font-weight: 600;
+     color: var(--theme-white-color);
+}
+.discount-text h2 span{
+     color: var(--theme-text-color);
+}
+.discount-text button{
+     color: var(--theme-dark-color);
+     padding: 15px 30px;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     border-radius: 5px;
+     text-transform: capitalize;
+     font-size: 16px;
+     font-weight: 500;
+     background-color: var(--theme-white-color);
+     position: relative;
+}
+.discount-text button span{
+     position: relative;
+     z-index: 1;
+}
+.discount-text button::before{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 0;
+     height: 100%;
+     background: var(--theme-lighter-color);
+     border-radius: 5px;
+     transition-duration: var(--duration-a-5);
+}
+.discount-text button:hover span{
+     color: var(--theme-white-color);
+}
+.discount-text button:hover::before{
+     width: 100%;
+}
+.discount-job{
+     width: 60%;
+     height: 400px;
+     color: #fff;
+     text-align: center;
+     background-color: #fff;
+     border-radius: 10px;
+     position: relative;
+}
+.discount-job div{
+     width: 50%;
+}
+.discount-job div h2{
+     text-transform: capitalize;
+     font-size: 38px;
+     color: var(--theme-text-color);
+}
+.discount-job span{
+     text-transform: capitalize;
+     font-size: 18px;
+     color: var(--theme-black-color);
+}
+.discount-job::after{
+     content: "";
+     background-image: url(../IMAGE/asset\ 38.png);
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     top: 0;
+     left: 0;
+     background-position: center center;
+     background-size: cover;
+     z-index: 99;
+}
+.discount .service-animation img{
+     animation: zoom infinite 2s ease-in-out alternate;
+}
+.discount .service-animation img:nth-child(2){
+     top: 10%;
+     left: 40%;
+     width: 50px;
+}
+@keyframes zoom {
+     50%{
+          transform: scale(1.2);
+     }
+     100%{
+          transform: scale(1);
+     }
+}
+
+/* ============================================== Team Section css ========================================= */
+
+.team{
+     padding: 100px 0;
+}
+.team-members{
+     flex-wrap: wrap;
+     gap: 20px;
+}
+.member{
+     width: calc(25% - 20px);
+     box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
+     border-radius: 0 0 10px 10px;
+}
+.member-img img{
+     width: 100%;
+     vertical-align: middle;
+}
+.member-name{
+     text-transform: capitalize;
+     text-align: center;
+     padding: 25px;
+}
+.member-name h4{
+     font-size: 20px;
+     font-weight: 500;
+     color: var(--theme-lighter-color);
+}
+.member-img{
+     position: relative;
+     overflow: hidden;
+}
+.member-social{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     transform: translateY(45px);
+     transition: var(--duration-a-5);
+}
+.member-social a{
+     color: var(--theme-white-color);
+     display: inline-block;
+     width: 65px;
+     height: 45px;
+     line-height: 45px;
+     text-align: center;
+     display: table-cell;
+     font-size: 20px;
+     background-color: #031888;
+     border-right: 1px solid var(--theme-gray-color);
+     transition-duration: var(--duration-a-5);
+}
+.member-social a:last-child{
+     border-right: none;
+}
+.member-social a:hover{
+     background-color: var(--theme-lighter-color);
+}
+.member:hover .member-social{
+     transform: translateY(0);
+}
+
+/* ============================================== Testimonial Section css ========================================= */
+
+
+.testimonial-box{
+     width: 60%;
+     margin: auto;
+     text-align: center;
+     color: var(--theme-white-color);
+}
+.auther{
+     padding: 10px 0;
+}
+.auther h3{
+     font-size: 23px;
+     text-transform: capitalize;
+     padding-bottom: 10px;
+}
+.testimonial-box p{
+     margin-top: 15px;
+     padding: 10px 0;
+     line-height: 1.8;
+     font-size: 17px;
+}
+.testi-slider{
+     background-image: linear-gradient(90deg,rgba(3,24,136,.8),rgba(3,24,136,.8)),url(../IMAGE/asset\ 39.png);
+     background-position: center center;
+     background-size: cover;
+     padding: 70px 0;
+}
+
+/* ============================================== Blog Section css ========================================= */
+
+.blogs{
+     padding: 70px 0;
+}
+.owl-stage-outer{
+     padding: 40px 0;
+}
+.blog-box{
+     box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
+     border-radius: 0 0 10px 10px;
+}
+.blog-img{
+     overflow: hidden;
+}
+.blog-img img{
+     width: 100%;
+     transition: var(--duration-a-5);
+}
+.blogs-text{
+     padding: 30px;
+}
+.blogs-text h4 a{
+     text-transform: capitalize;
+     font-size: 20px;
+     font-weight: 600;
+     color: var(--theme-black-color);
+     transition: .3s;
+}
+.blogs-text h4{
+     margin-bottom: 10px;
+}
+.blogs-text ul li{
+     text-transform: capitalize;
+     font-weight: 500;
+     padding-right: 30px;
+     font-size: 12px;
+     color: var(--theme-gray-color);
+}
+.blogs-text ul li i{
+     padding-right: 10px;
+     color: var(--theme-lighter-color);
+}
+.blogs-text ul li a{
+     text-transform: capitalize;
+     color: var(--theme-gray-color);
+     font-weight: 500;
+     transition: .3s;
+}
+.blogs-text ul li a:hover{
+     color: var(--theme-dark-color);
+}
+.blogs-text ul{
+     margin-bottom: 10px;
+}
+.blogs-text p{
+     font-size: 15px;
+     color: var(--theme-gray-color);
+     font-weight: 500;
+     line-height: 1.8;
+     margin-bottom: 15px;
+}
+.blogs-text > a{
+     color: var(--theme-dark-color);
+     transition: var(--duration-a-5);
+     font-weight: 600;
+     font-size: 16px;
+}
+.blogs-text > a:hover{
+     letter-spacing: 2px;
+}
+.blog-box:hover h4 a{
+     color: var(--theme-dark-color);
+}
+.blog-box:hover img{
+     transform: scale(1.2);
+}
+.owl-theme .owl-dots .owl-dot span{
+     background-color: var(--theme-lighter-color);
+}
+.owl-theme .owl-dots .owl-dot.active span{
+     background: var(--theme-dark-color);
+     position: relative;
+}
+.owl-theme .owl-dots .owl-dot.active span::before{
+     content: "";
+     position: absolute;
+     width: 15px;
+     height: 15px;
+     border-radius: 15px;
+     top: -33%;
+     left: -33%;
+     border: 1px solid var(--theme-dark-color);
+}
+
+/* ============================================== Contact Section css ========================================= */
+
+.contact{
+     padding-bottom: 50px;
+     width: 100%;
+}
+.contact-area{
+     padding: 55px 85px;
+     position: relative;
+     z-index: 4;
+     box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
+     border-radius: 10px;
+     background-color: #fff;
+     background-image: url(../IMAGE/asset\ 40.png);
+     border-radius: 10px;
+     background-position: center center;
+     background-size: cover;
+     margin-bottom: -350px;
+}
+.contact-area::before{
+     content: "";
+     position: absolute;
+     background-image: url(../IMAGE/asset\ 42.png);
+     width: 135px;
+     height: 130px;
+     top: 3%;
+     left: 3%;
+     z-index: -1;
+}
+.contact-area::after{
+     content: "";
+     position: absolute;
+     background-image: url(../IMAGE/asset\ 41.png);
+     background-size: cover;
+     width: 100px;
+     height: 100px;
+     top: 3%;
+     right: 3%;
+     z-index: -1;
+}
+.contact-img{
+     width: 48%;
+}
+.contact-img img{
+     width: 100%;
+     border-radius: 10px;
+}
+.contact-text{
+     width: 48%;
+}
+.contact-text h2{
+     font-size: 26px;
+     font-weight: 600;
+     text-transform: capitalize;
+     color: var(--theme-black-color);
+     margin-bottom: 10px;
+}
+.contact-text h2 span{
+     color: var(--theme-lighter-color);
+}
+.contact-text p{
+     color: var(--theme-gray-color);
+     line-height: 1.8;
+     font-size: 16px;
+     margin-bottom: 10px;
+}
+.contact-text input,
+.contact-text textarea{
+     width: 100%;
+     background: var(--theme-white-color);
+     margin-bottom: 16px;
+     padding: 10px 20px;
+     border-radius: 10px;
+     border: 1px solid var(--theme-lighter-color);
+     line-height: 1;
+     color: var(--theme-gray-color);
+     font-size: 16px;
+     font-weight: 400;
+     outline: none;
+}
+.contact-text button{
+     font-size: 16px;
+     margin: 10px 0;
+     text-transform: capitalize;
+     padding: 15px 30px;
+     background-color: var(--theme-lighter-color);
+     border-radius: 5px;
+     position: relative;
+     color: var(--theme-white-color);
+     border: none;
+     outline: none;
+}
+.contact-text button span{
+     position: relative;
+     z-index: 1;
+}
+.contact-text button::before{
+     content: "";
+     position: absolute;
+     width: 0;
+     height: 100%;
+     top: 0;
+     left: 0;
+     border-radius: 5px;
+     background-color: var(--theme-dark-color);
+     transition: var(--duration-a-5);
+     z-index: 0;
+}
+.contact-text button:hover::before{
+     width: 100%;
+}
+.contact-area > img{
+     position: absolute;
+     top: 10%;
+     z-index: 0;
+}
+
+/* ============================================== Footer Section css ========================================= */
+
+
+footer{
+     background: var(--theme-dark-color);
+     padding-top: 400px;
+     position: relative;
+}
+footer::before{
+     content: "";
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     top: 0;
+     left: 0;
+     background-image: url(../IMAGE/asset\ 40.png);
+     background-position: center center;
+     background-size: cover;
+     z-index: 0;
+}
+.footer{
+     padding-bottom: 100px;
+     position: relative;
+     z-index: 1;
+}
+.footer-row{
+     gap: 40px;
+}
+.footer-tab{
+     width: calc(25% - 40px);
+     color: #fff;
+}
+.footer-about p,
+.footer-service p{
+     line-height: 1.8;
+     font-size: 15px;
+     font-weight: 500;
+     color: var(--theme-white-color);
+     margin: 20px 0;
+}
+.footer-about > div{
+     position: relative;
+}
+.footer-about form input{
+     width: 100%;
+     height: 50px;
+     padding: 15px;
+     padding-right: 50px;
+     font-size: 16px;
+     outline: none;
+     border: none;
+     border-radius: 5px;
+}
+.footer-about form button{
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 50px;
+     width: 50px;
+     font-size: 32px;
+     border: none;
+     outline: none;
+     background-color: var(--theme-lighter-color);
+     color: var(--theme-white-color);
+     border-radius: 0 5px 5px 0;
+}
+.footer-service{
+     padding-left: 30px;
+     color: var(--theme-white-color);
+}
+.footer-service h3{
+     text-transform: capitalize;
+     font-size: 20px;
+     margin-bottom: 20px;
+     text-decoration: underline;
+     text-underline-offset: 5px;
+     text-decoration-color: var(--theme-gray-color);
+}
+.footer-service ul li{
+     text-transform: capitalize;
+     line-height: 2;
+     margin-bottom: 10px;
+}
+.footer-service ul li a{
+     color: var(--theme-white-color);
+     margin-left: 10px;
+     font-size: 16px;
+     transition: var(--duration-a-5);
+}
+.footer-service ul li a:hover{
+     color: var(--theme-lighter-color);
+     letter-spacing: 1px;
+}
+
+/* copy Rights Bar css */
+
+.rights{
+     border-top: 1px solid var(--theme-gray-color);
+     position: relative;
+     z-index: 1;
+}
+.rights-row{
+     padding: 30px 0;
+     color: var(--theme-white-color);
+}
+.rights .social-icon a{
+     color: var(--theme-white-color);
+}
+.rights .social-icon a i{
+     width: 30px;
+     height: 30px;
+     font-size: 16px;
+     text-align: center;
+     line-height: 30px;
+     border-radius: 5px;
+     background-color: rgba(96, 150, 253,.2);
+     transition: var(--duration-a-5);
+}
+.rights .social-icon a:hover i{
+     color: #031888;
+     background-color: var(--theme-white-color);
+}
+.copy-rights a{
+     color: var(--theme-white-color);
+     transition-duration: var(--duration-a-5);
+}
+.copy-rights a:hover{
+     color: var(--theme-text-color);
+}
+
+
+
+/* ======================================================================================================= */
+/* ============================================== About Page CSS ========================================= */
+/* ======================================================================================================= */
+
+
+/*========================================= About page title section CSS ===========================================*/
+
+
+.about-page-title{
+     background-image: url(../IMAGE/assets-img-title-bg-1.png);
+}
+.page-title{
+     padding: 130px 0;
+     background-position: center center;
+     background-size: cover;
+     position: relative;
+     z-index: 0;
+}
+.page-title::before{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(3, 24, 136, 0.35);
+     z-index: -1;
+}
+.title{
+     text-align: center;
+}
+.title ul{
+     justify-content: center;
+}
+.title h1{
+     color: var(--theme-white-color);
+     font-size: 40px;
+     font-weight: 600;
+     text-transform: capitalize;
+     margin-bottom: 5px;
+}
+.title ul li a{
+     color: var(--theme-white-color);
+     text-transform: capitalize;
+     padding: 0 10px;
+     font-size: 16px;
+     transition: var(--duration-a-5);
+}
+.title ul li a:hover{
+     color: var(--theme-dark-color);
+}
+.title ul li i{
+     color: var(--theme-dark-color);
+}
+
+/*========================================= About section CSS ===========================================*/
+
+.about{
+     padding: 100px 0;
+}
+.about-img{
+     width: 50%;
+     position: relative;
+}
+.about-img img{
+     width: 100%;
+}
+.about-img::before{
+     content: "";
+     position: absolute;
+     top: -7%;
+     right: -5%;
+     width: 150px;
+     height: 150px;
+     background: url(../IMAGE/about-shape.png);
+     background-position: center center;
+     background-size: cover;
+     z-index: -1;
+
+}
+.about-contant{
+     width: 50%;
+     padding: 60px;
+}
+.about-contant-heading h1{
+     text-transform: capitalize;
+     font-size: 40px;
+     line-height: 1.3;
+     font-weight: 600;
+     margin-bottom: 20px;
+}
+.about-contant-heading{
+     margin-bottom: 30px;
+}
+.about-contant-heading p{
+     font-size: 16px;
+     line-height: 2;
+     color: var(--theme-gray-color);
+     padding-right: 80px;
+}
+.about-contant ul li{
+     width: 33.33%;
+     line-height: 2;
+     font-size: 18px;
+     font-weight: 500;
+     text-transform: capitalize;
+     margin-bottom: 10px;
+}
+.about-btn{
+     padding: 20px 0;
+}
+.about-btn button{
+     border: 1px solid var(--theme-lighter-color);
+     outline: none;
+     font-size: 18px;
+     font-weight: 500;
+     text-transform: capitalize;
+     background-color: var(--theme-white-color);
+     padding: 15px 35px;
+     border-radius: 5px;
+     color: var(--theme-lighter-color);
+     position: relative;
+     transition:  var(--duration-a-5);
+}
+.about-btn button span{
+     position: relative;
+     z-index: 1;
+}
+.about-btn button::before{
+     content: "";
+     position: absolute;
+     width: 0;
+     height: 100%;
+     background-color: var(--theme-lighter-color);
+     border-radius: 5px;
+     top: 0;
+     left: 0;
+     z-index: 0;
+     transition: var(--duration-a-5);
+}
+.about-btn button:hover::before{
+     width: 100%;
+}
+.about-btn button:hover{
+     color: var(--theme-white-color);
+}
+/*========================================= Process section CSS ===========================================*/
+
+.process-heading{
+     text-align: center;
+     padding-bottom: 100px;
+}
+.about-process{
+     padding-top: 100px;
+}
+
+
+
+/* ======================================================================================================= */
+/* ============================================== About Page CSS ========================================= */
+/* ======================================================================================================= */
+
+/*========================================= Service page title section CSS ===========================================*/
+
+.service-page-title{
+     background: url(../IMAGE/8.png);
+}
+
+
+
+/* ======================================================================================================= */
+/* ============================================== Blog Page CSS ========================================= */
+/* ======================================================================================================= */
+
+/*========================================= Blog page title section CSS ===========================================*/
+
+.blog-page-title{
+     background: url(../IMAGE/assets-img-title-bg-2.png);
+}
+.w-33{
+     width: 32.3%;
+     text-align: left;
+}
+.blog-content{
+     gap: 20px;
+     flex-wrap: wrap;
+}
+
+
+/* ======================================================================================================= */
+/* ============================================== Team Page CSS ========================================= */
+/* ======================================================================================================= *
+
+/*========================================= Team page title section CSS ===========================================*/
+
+.team-page-title{
+     background: url(../IMAGE/assets-img-title-bg-7.png);
+}
+.page-n{
+     padding-top: 50px;
+}
+.page-n ul{
+     justify-content: center;
+}
+.page-n ul li a{
+     font-size: 14px;
+     margin: 0 7px;
+     padding: 10px 15px;
+     border-radius: 100%;
+     color: var(--theme-dark-color);
+     box-shadow: 0 0 20px 0 rgba(0,0,0,.1803921569);
+     transition: var(--duration-a-5);
+}
+.page-n ul li:first-child a{
+     background-color: #e9ecef;
+}
+.page-n ul li:nth-child(3) a{
+     background-color: var(--theme-dark-color);
+     color: var(--theme-white-color);
+}
+.page-n ul li a:hover{
+     background-color: var(--theme-dark-color);
+     color: var(--theme-white-color);
+}
